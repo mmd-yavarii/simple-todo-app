@@ -1,6 +1,7 @@
 const todos = JSON.parse(localStorage.getItem("todos")) || [];
 
 const main = document.querySelector("main");
+const dateContainer = document.querySelector("#date-container");
 const addBtn = document.querySelector("#add-btn");
 const addTodoPage = document.querySelector("#add-todo-page");
 const addTodoBtn = document.querySelector("#add-todo-btn");
@@ -58,7 +59,28 @@ const hideAddTodoPage = (event) => {
   }
 };
 
+// show date in the page
+const showDate = () => {
+  const months = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+  const now = new Date();
+  dateContainer.innerText = `${now.getDate()} ${months[now.getMonth()]}`;
+};
+
 window.addEventListener("DOMContentLoaded", () => {
+  showDate();
   addBtn.addEventListener("click", showAddTodoPage);
   document.addEventListener("click", hideAddTodoPage);
   addTodoBtn.addEventListener("click", addTodo);
