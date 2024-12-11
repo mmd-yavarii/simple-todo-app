@@ -3,50 +3,31 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>todo list</title>
-    <link rel="stylesheet" href="./satyle.css" />
+    <title>Todo App</title>
+    <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
-    <!-- header and inputs -->
-    <div class="container">
-      <h2>Todo App</h2>
-      <div class="input-section">
-        <input type="text" placeholder="add to do ..." id="task-input" />
-        <input type="date" id="date-input" />
-        <button id="add-btn">add</button>
-        <button id="edit-btn" style="display: none">Edit</button>
+    <header>
+      <p id="date-container">20,Jon</p>
+      <input type="text" id="search" placeholder="Search..." />
+      <div class="filter-container">
+        <div class="filters selected">All</div>
+        <div class="filters">Pending</div>
+        <div class="filters">Done</div>
       </div>
+    </header>
 
-      <div class="todos-operator">
-        <div>
-          <button class="filter-todos">All</button>
-          <button class="filter-todos">Pending</button>
-          <button class="filter-todos">Compeleted</button>
-        </div>
+    <main></main>
 
-        <button id="delete-all-btn">delete all</button>
-      </div>
+    <div id="add-todo-page">
+      <input type="text" placeholder="Title" id="title-inp" />
+      <input type="text" placeholder="Description..." id="placeholder-inp" />
+      <button id="add-todo-btn">Add</button>
+      <button id="edit-todo-btn">Edit</button>
     </div>
 
-    <!-- warning message -->
-    <div id="alert-message"></div>
+    <div id="add-btn">+</div>
 
-    <!-- table -->
-    <div class="table">
-      <table>
-        <thead>
-          <tr>
-            <th>task</th>
-            <th>date</th>
-            <th>status</th>
-            <th>actions</th>
-          </tr>
-        </thead>
-
-        <tbody></tbody>
-      </table>
-    </div>
-
-    <script src="./main.js"></script>
+    <script src="./js/main.js"></script>
   </body>
 </html>
